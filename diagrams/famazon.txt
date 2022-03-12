@@ -1,5 +1,152 @@
+Static Data
+  product table
+  discount table
+  user table
+
+Session Data
+  shopping_session table
+  cart_item table
+
+Processed Data
+  order_details table
+  order_items table
+  payment_details table
+
+_________________________________
+
+1. User management
+  
+user
+  user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+  username VARCHAR
+  password TEXT
+  first_name VARCHAR
+  last_name VARCHAR
+  email VARCHAR
+  telephone INT
+  created_at TIMESTAMP NOT NULL
+  modified_at TIMESTAMP
+
+user_address
+  address_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+  fk_user_id INT
+  address_line1 VARCHAR
+  address_line2 VARCHAR
+  city VARCHAR
+  zip/postal_code VARCHAR
+  telephone VARCHAR
+  mobile VARCHAR
+
+user_payment
+  payment_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+  fk_user_id INT
+  payment_type ENUM 
+    [paypal, credit_card, debit_card, invoice]
+  provider VARCHAR
+  account_no INT
+  expiry DATE 
+
+2. Product management
+
+product
+  product_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+  name VARCHAR
+  brand VARCHAR
+  desc TEXT
+  SKU/barcode VARCHAR
+  fk_category_id INT
+  fk_inventory_id INT
+  price DECIMAL
+  fk_discount_id INT
+  fk_supplier_id INT
+  fk_shipper_id INT
+  created_at TIMESTAMP NOT NULL
+  modified_at TIMESTAMP
+  deleted_at TIMESTAMP
+
+product_supplier
+  supplier_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+  supplier_name VARCHAR
+  supplier_country VARCHAR
+  supplier_city
+
+product_shipper
+  shipper_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+  shipper_name VARCHAR
+  shipper_country VARCHAR
+  shipper_city
+
+product_inventory
+  inventory_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+  quantity INT
+  created_at TIMESTAMP NOT NULL
+  modified_at TIMESTAMP
+  deleted_at TIMESTAMP
+
+product_category
+  cat_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+  name VARCHAR
+  desc TEXT
+  created_at TIMESTAMP NOT NULL
+  modified_at TIMESTAMP
+  deleted_at TIMESTAMP
+
+product_discount
+  discount_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+  name VARCHAR
+  desc TEXT
+  discount_percent DECIMAL
+  active BOOLEAN
+  created_at TIMESTAMP NOT NULL
+  modified_at TIMESTAMP
+  deleted_at TIMESTAMP
+
+3. Shopping process
+
+shopping_session
+  session_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+  fk_user_id INT
+  total DECIMAL
+  created_at TIMESTAMP NOT NULL
+  modified_at TIMESTAMP
+
+cart_item
+  item_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+  fk_session_id INT
+  fk_prod_id INT
+  quantity INT
+  created_at TIMESTAMP NOT NULL
+  modified_at TIMESTAMP
+
+order_items
+  items_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+  fk_order_id INT
+  fk_prod_id INT
+  quantity INT
+  created_at TIMESTAMP NOT NULL
+  modified_at TIMESTAMP
+
+order_details
+  order_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+  fk_user_id INT
+  total DECIMAL
+  fk_invoice_no
+  created_at TIMESTAMP NOT NULL
+  modified_at TIMESTAMP
+
+order_invoice
+  invoice_no INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+  fk_order_id INT
+  amount INT
+  provider VARCHAR
+  status VARCHAR
+  created_at TIMESTAMP NOT NULL
+  modified_at TIMESTAMP
+
+_________________________________
+
 products
-  PK prod_id INT NOT NULL AUTO-INCREMENT
+  PK prod_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
   prod_name VARCHAR
   description VARCHAR
   price INT
@@ -9,7 +156,7 @@ products
   fk_seller_id INT
 
 categories
-  PK cat_id INT NOT NULL AUTO-INCREMENT
+  PK cat_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
   cat_name VARCHAR
 
 prod_to_cat
@@ -17,18 +164,18 @@ prod_to_cat
   PK fk_cat_id INT
 
 seller
-  PK seller_id INT NOT NULL AUTO-INCREMENT
+  PK seller_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
   seller_name VARCHAR
   seller_address VARCHAR
   seller_country VARCHAR
 
 customer
-  PK cust_id INT NOT NULL AUTO-INCREMENT
+  PK cust_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
   fname VARCHAR
   lname VARCHAR
   username VARCHAR
-  address VARCHAR
   email VARCHAR
+  fk_address VARCHAR
   fk_payment VARCHAR
 
 prod_to_cust
@@ -48,7 +195,7 @@ cust_to_pay
   PK fk_pay_type VARCHAR
 
 shipper
-  PK ship_id INT NOT NULL AUTO-INCREMENT
+  PK ship_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
   ship_name VARCHAR
   ship_country VARCHAR
   ship_address VARCHAR
