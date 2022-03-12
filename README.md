@@ -11,7 +11,7 @@ Famazon E-Commerce Site Database
 - [x] Research Amazon product categories & listings
 
 ## Database Design
-- [ ] Step 1: Cloud Diagram - Define the purpose
+- [x] Step 1: Cloud Diagram - Define the purpose
 - [ ] Step 2: ER Diagram - Entity Relationship Model 
 - [ ] Step 3: Classes Diagram - Unified Modeling Language
 - [ ] Step 4: Normalization - Refine & Normalize Design
@@ -44,4 +44,4 @@ Famazon E-Commerce Site Database
 - [ ] Send repository link through LMS
 - [ ] Invite codefactorygit as collaborator
 
-Work time: 1:45 hrs
+Work time: 6:00 hrs
