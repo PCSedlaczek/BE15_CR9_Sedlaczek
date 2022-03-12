@@ -1,0 +1,58 @@
+products
+  PK prod_id INT NOT NULL AUTO-INCREMENT
+  prod_name VARCHAR
+  description VARCHAR
+  price INT
+  type VARCHAR
+  color VARCHAR
+  fk_cat_id INT
+  fk_seller_id INT
+
+categories
+  PK cat_id INT NOT NULL AUTO-INCREMENT
+  cat_name VARCHAR
+
+prod_to_cat
+  PK fk_prod_id INT
+  PK fk_cat_id INT
+
+seller
+  PK seller_id INT NOT NULL AUTO-INCREMENT
+  seller_name VARCHAR
+  seller_address VARCHAR
+  seller_country VARCHAR
+
+customer
+  PK cust_id INT NOT NULL AUTO-INCREMENT
+  fname VARCHAR
+  lname VARCHAR
+  username VARCHAR
+  address VARCHAR
+  email VARCHAR
+  fk_payment VARCHAR
+
+prod_to_cust
+  PK fk_cust_id INT
+  PK fk_prod_id INT
+  invoice_no INT
+  invoice_price INT
+
+payments
+  PK pay_type ENUM [paypal, credit_card, debit_card, invoice]
+  card_num INT
+  secure_code INT
+  valid_thru INT
+
+cust_to_pay
+  PK fk_cust_id INT
+  PK fk_pay_type VARCHAR
+
+shipper
+  PK ship_id INT NOT NULL AUTO-INCREMENT
+  ship_name VARCHAR
+  ship_country VARCHAR
+  ship_address VARCHAR
+
+prod-to-ship
+  PK fk_ship_id INT
+  PK fk_prod_id INT
