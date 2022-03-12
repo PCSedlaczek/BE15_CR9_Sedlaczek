@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="uA4CGv25w6LDr2dUHk4I" name="Cloud Diagram">
-        <mxGraphModel dx="819" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+        <mxGraphModel dx="385" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#2A2A2A" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -364,15 +364,18 @@
         </mxGraphModel>
     </diagram>
     <diagram id="pfOeWIazWm3u0HiB-wJ3" name="ER Diagram">
-        <mxGraphModel dx="819" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="580" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
             <root>
                 <mxCell id="XDR_hxvts-CRjyzbiIaX-0"/>
                 <mxCell id="XDR_hxvts-CRjyzbiIaX-1" parent="XDR_hxvts-CRjyzbiIaX-0"/>
+                <mxCell id="eoposD7i9D20CyBORghA-0" value="E-Commerce Site" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#FFFFFF;strokeColor=default;strokeWidth=1;fillColor=none;" vertex="1" parent="XDR_hxvts-CRjyzbiIaX-1">
+                    <mxGeometry x="40" y="40" width="160" height="80" as="geometry"/>
+                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
     <diagram id="ZMcL1H6-MoCsOxmAkYsg" name="UML Classes">
-        <mxGraphModel dx="552" dy="226" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="820" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
             <root>
                 <mxCell id="bHdeOxCzTRZ2v04SQsUZ-0"/>
                 <mxCell id="bHdeOxCzTRZ2v04SQsUZ-1" parent="bHdeOxCzTRZ2v04SQsUZ-0"/>
@@ -380,7 +383,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="ZXN1x3Ec3fNGPrU90A1T" name="Normalization">
-        <mxGraphModel dx="1007" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="820" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
             <root>
                 <mxCell id="2kx312uoF0MOdlM_kc6i-0"/>
                 <mxCell id="2kx312uoF0MOdlM_kc6i-1" parent="2kx312uoF0MOdlM_kc6i-0"/>
