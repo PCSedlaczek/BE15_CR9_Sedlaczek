@@ -6,9 +6,9 @@ Famazon E-Commerce Site Database
 - [x] Create Task List from project requirements
 - [x] Create diagrams & database subfolders
 
-- [ ] Brainstorm purchasing process
-- [ ] Draw purchasing process on paper
-- [ ] Research Amazon product categories & listings
+- [x] Brainstorm purchasing process
+- [x] Draw purchasing process on paper
+- [x] Research Amazon product categories & listings
 
 ## Database Design
 - [ ] Step 1: Cloud Diagram - Define the purpose
@@ -44,4 +44,4 @@ Famazon E-Commerce Site Database
 - [ ] Send repository link through LMS
 - [ ] Invite codefactorygit as collaborator
 
-Work time: : hrs
+Work time: 1:45 hrs
