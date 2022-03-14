@@ -17,10 +17,10 @@ Famazon E-Commerce Site Database
 - [x] Step 4: Normalization - Refine & Normalize Design
 
 ## MySQL
-- [ ] Recreate database design in MySQL
-- [ ] Name database BE15_CR9_famazon_sedlaczek
-- [ ] Export database as BE15_CR9_famazon_sedlaczek.sql
-- [ ] Use option "ADD CREATE DATABASE / USE statement"
+- [x] Recreate database design in MySQL
+- [x] Name database BE15_CR9_famazon_sedlaczek
+- [x] Export database as BE15_CR9_famazon_sedlaczek.sql
+- [x] Use option "ADD CREATE DATABASE / USE statement"
 
 - [ ] Insert test data into database (at least 3 sets/table)
 
@@ -39,9 +39,9 @@ Famazon E-Commerce Site Database
 - [ ] Create at least 2 extra JOINS in your SQL queries that connect more than 3 tables
 
 ## Finalize
-- [ ] Format documents in Visual Studio Code
-- [*] Push files to GitHub repository
+- [x] Format documents in Visual Studio Code
+- [x] Push files to GitHub repository
 - [x] Send repository link through LMS
 - [ ] Invite codefactorygit as collaborator
 
-Work time: 11:30 hrs
+Work time: 12:45 hrs
