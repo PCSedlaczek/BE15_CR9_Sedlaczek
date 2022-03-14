@@ -12,9 +12,9 @@ Famazon E-Commerce Site Database
 
 ## Database Design
 - [x] Step 1: Cloud Diagram - Define the purpose
-- [ ] Step 2: ER Diagram - Entity Relationship Model 
-- [ ] Step 3: Classes Diagram - Unified Modeling Language
-- [ ] Step 4: Normalization - Refine & Normalize Design
+- [x] Step 2: ER Diagram - Entity Relationship Model 
+- [x] Step 3: Classes Diagram - Unified Modeling Language
+- [x] Step 4: Normalization - Refine & Normalize Design
 
 ## MySQL
 - [ ] Recreate database design in MySQL
@@ -35,13 +35,13 @@ Famazon E-Commerce Site Database
 - [ ] Save queries to BE15_CR9_famazon_sedlaczek_queries.sql file
 
 ## Bonus
-- [ ] Expand initial specification with more than 10 tables
+- [x] Expand initial specification with more than 10 tables
 - [ ] Create at least 2 extra JOINS in your SQL queries that connect more than 3 tables
 
 ## Finalize
 - [ ] Format documents in Visual Studio Code
-- [ ] Push files to GitHub repository
-- [ ] Send repository link through LMS
+- [*] Push files to GitHub repository
+- [x] Send repository link through LMS
 - [ ] Invite codefactorygit as collaborator
 
-Work time: 6:00 hrs
+Work time: 11:30 hrs
