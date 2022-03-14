@@ -42,6 +42,6 @@ Famazon E-Commerce Site Database
 - [x] Format documents in Visual Studio Code
 - [x] Push files to GitHub repository
 - [x] Send repository link through LMS
-- [ ] Invite codefactorygit as collaborator
+- [x] Invite codefactorygit as collaborator
 
 Work time: 12:45 hrs
