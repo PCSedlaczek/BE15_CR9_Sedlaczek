@@ -58,7 +58,6 @@ product
   price DECIMAL,
   fk_discount_id INT,
   fk_supplier_id INT,
-  fk_shipper_id INT,
   created_at TIMESTAMP,
   modified_at TIMESTAMP,
 
@@ -77,6 +76,7 @@ product_shipper
 product_inventory
   inventory_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   quantity INT,
+  warehouse INT,
   created_at TIMESTAMP,
   modified_at TIMESTAMP,
 
@@ -117,6 +117,7 @@ order_items
   items_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   fk_order_id INT,
   fk_prod_id INT,
+  fk_shipper_id INT,
   quantity INT,
   created_at TIMESTAMP,
   modified_at TIMESTAMP,
