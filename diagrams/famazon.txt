@@ -18,44 +18,43 @@ _________________________________
   
 user
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  username VARCHAR(),
-  first_name VARCHAR(),
-  last_name VARCHAR(),
+  username VARCHAR,
+  first_name VARCHAR,
+  last_name VARCHAR,
   password TEXT,
-  email VARCHAR(),
+  email VARCHAR,
   created_at TIMESTAMP,
   modified_at TIMESTAMP,
 
 user_address
   address_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   fk_user_id INT,
-  address_line1 VARCHAR(),
-  address_line2 VARCHAR(),
-  city VARCHAR(),
-  zip/postal_code VARCHAR(),
-  telephone VARCHAR(),
-  mobile VARCHAR(),
+  address_line1 VARCHAR,
+  address_line2 VARCHAR,
+  city VARCHAR,
+  zip/postal_code VARCHAR,
+  telephone VARCHAR,
+  mobile VARCHAR,
 
 user_billing
   billing_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   fk_user_id INT,
-  payment_type ENUM,
+  provider ENUM,
     [paypal, credit_card, debit_card, invoice]
-  provider VARCHAR(),
-  account_no INT,
+  account_no VARCHAR,
   expiry DATE,
 
 2. Product management
 
 product
   product_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(),
-  brand VARCHAR(),
+  name VARCHAR,
+  brand VARCHAR,
   desc TEXT,
-  SKU/barcode VARCHAR(),
+  price DECIMAL,
+  SKU/barcode VARCHAR,
   fk_category_id INT,
   fk_inventory_id INT,
-  price DECIMAL,
   fk_discount_id INT,
   fk_supplier_id INT,
   created_at TIMESTAMP,
@@ -63,15 +62,15 @@ product
 
 product_supplier
   supplier_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  supplier_name VARCHAR(),
-  supplier_country VARCHAR(),
-  supplier_city VARCHAR(),
+  supplier_name VARCHAR,
+  supplier_country VARCHAR,
+  supplier_city VARCHAR,
 
 product_shipper
   shipper_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  shipper_name VARCHAR(),
-  shipper_country VARCHAR(),
-  shipper_city VARCHAR(),
+  shipper_name VARCHAR,
+  shipper_country VARCHAR,
+  shipper_city VARCHAR,
 
 product_inventory
   inventory_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -82,14 +81,14 @@ product_inventory
 
 product_category
   cat_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(),
+  name VARCHAR,
   desc TEXT,
   created_at TIMESTAMP,
   modified_at TIMESTAMP,
 
 product_discount
   discount_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(),
+  name VARCHAR,
   desc TEXT,
   discount_percent DECIMAL,
   active BOOLEAN,
@@ -134,8 +133,9 @@ order_invoice
   invoice_no INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   fk_order_id INT,
   amount INT,
-  provider VARCHAR(),
-  status VARCHAR(),
+  provider ENUM,
+    [paypal, credit_card, debit_card, invoice]
+  status VARCHAR,
   created_at TIMESTAMP,
   modified_at TIMESTAMP,
 
@@ -143,17 +143,17 @@ _________________________________
 
 products
   PK prod_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  prod_name VARCHAR(),
-  description VARCHAR(),
+  prod_name VARCHAR,
+  description VARCHAR,
   price INT,
-  type VARCHAR(),
-  color VARCHAR(),
+  type VARCHAR,
+  color VARCHAR,
   fk_cat_id INT,
   fk_seller_id INT
 
 categories
   PK cat_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  cat_name VARCHAR(),
+  cat_name VARCHAR,
 
 prod_to_cat
   PK fk_prod_id INT,
@@ -161,18 +161,18 @@ prod_to_cat
 
 seller
   PK seller_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  seller_name VARCHAR(),
-  seller_address VARCHAR(),
-  seller_country VARCHAR(),
+  seller_name VARCHAR,
+  seller_address VARCHAR,
+  seller_country VARCHAR,
 
 customer
   PK cust_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  fname VARCHAR(),
-  lname VARCHAR(),
-  username VARCHAR(),
-  email VARCHAR(),
-  fk_address VARCHAR(),
-  fk_payment VARCHAR(),
+  fname VARCHAR,
+  lname VARCHAR,
+  username VARCHAR,
+  email VARCHAR,
+  fk_address VARCHAR,
+  fk_payment VARCHAR,
 
 prod_to_cust
   PK fk_cust_id INT,
@@ -188,13 +188,13 @@ payments
 
 cust_to_pay
   PK fk_cust_id INT,
-  PK fk_pay_type VARCHAR(),
+  PK fk_pay_type VARCHAR,
 
 shipper
   PK ship_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  ship_name VARCHAR(),
-  ship_country VARCHAR(),
-  ship_address VARCHAR(),
+  ship_name VARCHAR,
+  ship_country VARCHAR,
+  ship_address VARCHAR,
 
 prod-to-ship
   PK fk_ship_id INT,
