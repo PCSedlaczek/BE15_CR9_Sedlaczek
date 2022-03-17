@@ -22,17 +22,17 @@ Famazon E-Commerce Site Database
 - [x] Export database as BE15_CR9_famazon_sedlaczek.sql
 - [x] Use option "ADD CREATE DATABASE / USE statement"
 
-- [ ] Insert test data into database (at least 3 sets/table)
+- [x] Insert test data into database (at least 3 sets/table)
 
 ## Queries
-- [ ] Create at least 6 different SQL queries
-  - [ ] How many products were bought from a specific company?
-  - [ ] Who purchased products on this date?
-  - [ ] What products were sent between this and that date?
-  - [ ] How many products were sent to a specific city?
-  - [ ] etc.
-- [ ] Use JOINS for at least 3 queries
-- [ ] Save queries to BE15_CR9_famazon_sedlaczek_queries.sql file
+- [x] Create at least 6 different SQL queries
+  - How many products were bought from a specific company?
+  - Who purchased products on this date?
+  - What products were sent between this and that date?
+  - How many products were sent to a specific city?
+  - etc.
+- [x] Use JOINS for at least 3 queries
+- [x] Save queries to BE15_CR9_famazon_sedlaczek_queries.sql file
 
 ## Bonus
 - [x] Expand initial specification with more than 10 tables
@@ -44,4 +44,4 @@ Famazon E-Commerce Site Database
 - [x] Send repository link through LMS
 - [x] Invite codefactorygit as collaborator
 
-Work time: 12:45 hrs
+Work time: 16:45 hrs
