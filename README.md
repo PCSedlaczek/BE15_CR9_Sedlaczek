@@ -44,4 +44,4 @@ Famazon E-Commerce Site Database
 - [x] Send repository link through LMS
 - [x] Invite codefactorygit as collaborator
 
-Work time: 16:45 hrs
+Work time: 17:00 hrs
