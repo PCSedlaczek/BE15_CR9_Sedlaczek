@@ -25,9 +25,8 @@ CREATE TABLE user_address (
 CREATE TABLE user_billing (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   fk_user_id INT,
-  pay_type ENUM ('PayPal','Credit Card','Debit Card','Invoice'),
-  provider VARCHAR(30),
-  account_no INT,
+  provider ENUM ('PayPal','Credit Card','Debit Card','Invoice'),
+  account_no VARCHAR(20),
   expiry DATE,
   FOREIGN KEY (fk_user_id) REFERENCES user(id)
 );
@@ -50,7 +49,8 @@ CREATE TABLE shipper (
 
 CREATE TABLE inventory (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  quantity INT
+  quantity INT,
+  warehouse INT
 );
 
 CREATE TABLE category (
@@ -72,17 +72,16 @@ CREATE TABLE product (
   name VARCHAR(50),
   description TEXT,
   barcode VARCHAR(20),
-  price DECIMAL,
+  price DECIMAL(10,2),
+  image VARCHAR(50),
   fk_category_id INT,
   fk_inventory_id INT,
   fk_discount_id INT,
   fk_supplier_id INT,
-  fk_shipper_id INT,
   FOREIGN KEY (fk_category_id) REFERENCES category(id),
   FOREIGN KEY (fk_inventory_id) REFERENCES inventory(id),
   FOREIGN KEY (fk_discount_id) REFERENCES discount(id),
-  FOREIGN KEY (fk_supplier_id) REFERENCES supplier(id),
-  FOREIGN KEY (fk_shipper_id) REFERENCES shipper(id)
+  FOREIGN KEY (fk_supplier_id) REFERENCES supplier(id)
 );
 
 
@@ -91,7 +90,7 @@ CREATE TABLE product (
 CREATE TABLE cart_session (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   fk_user_id INT,
-  total DECIMAL,
+  total DECIMAL(10,2),
   FOREIGN KEY (fk_user_id) REFERENCES user(id)
 );
 
@@ -106,7 +105,7 @@ CREATE TABLE cart_item (
 
 CREATE TABLE order_details (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  total DECIMAL,
+  total DECIMAL(10,2),
   fk_user_id INT,
   fk_invoice_no INT,
   FOREIGN KEY (fk_user_id) REFERENCES user(id)
@@ -114,8 +113,8 @@ CREATE TABLE order_details (
 
 CREATE TABLE order_invoice (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
-  amount INT,
-  provider VARCHAR(30),
+  amount DECIMAL(10,2),
+  provider ENUM ('PayPal','Credit Card','Debit Card','Invoice'),
   status ENUM ('billed','paid','overdue'),
   fk_order_id INT,
   FOREIGN KEY (fk_order_id) REFERENCES order_details(id)
@@ -129,6 +128,8 @@ CREATE TABLE order_items (
   quantity INT,
   fk_order_id INT,
   fk_product_id INT,
+  fk_shipper_id INT,
   FOREIGN KEY (fk_order_id) REFERENCES order_details(id),
-  FOREIGN KEY (fk_product_id) REFERENCES product(id)
+  FOREIGN KEY (fk_product_id) REFERENCES product(id),
+  FOREIGN KEY (fk_shipper_id) REFERENCES shipper(id)
 );
